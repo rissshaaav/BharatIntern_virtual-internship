@@ -27,7 +27,7 @@ app.post("/", async (req, res) => {
       !newUser.email &&
       !newUser.password
     ) {
-      return res.status(400).json({ message: "one or more fields missing!" });
+      return res.status(400).send({ message: "one or more fields missing!" });
     }
     const user = await User.create(newUser);
     res.status(201).send(user);

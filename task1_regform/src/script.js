@@ -8,36 +8,41 @@ document
     var phoneNumber = document.getElementById("phoneNumber").value;
     var email = document.getElementById("email").value;
     var password = document.getElementById("password").value;
+    var confirmPassword = document.getElementById("confirmPassword").value;
 
     // Perform validation if needed
+    if (confirmPassword === password) {
+      var formData = {
+        firstName: firstName,
+        lastName: lastName,
+        phoneNumber: phoneNumber,
+        email: email,
+        password: password,
+      };
 
-    var formData = {
-      firstName: firstName,
-      lastName: lastName,
-      phoneNumber: phoneNumber,
-      email: email,
-      password: password,
-    };
-
-    // Send the data to the server
-    fetch("/", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(formData),
-    })
-      .then((response) => {
-        if (!response.ok) {
-          throw new Error(`Network response was not ok: ${response.status}`);
-        }
-        return response.json();
+      // Send the data to the server
+      fetch("/", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
       })
-      .then((data) => {
-        console.log("Registration successful:", data);
-        document.getElementById("registrationForm").reset();
-      })
-      .catch((error) => {
-        console.error("Error during registration:", error);
-      });
+        .then((response) => {
+          if (!response.ok) {
+            throw new Error(`Network response was not ok: ${response.status}`);
+          }
+          return response.json();
+        })
+        .then((data) => {
+          console.log("Registration successful:", data);
+          document.getElementById("registrationForm").reset();
+        })
+        .catch((error) => {
+          console.error("Error during registration:", error);
+        });
+    } else{
+      alert("passwords do not match");
+      document.getElementById("registrationForm").reset();
+    }
   });

@@ -1,0 +1,64 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    
+}
+.formContainer{
+    flex: 1;
+    padding: 2rem;
+    background-image: linear-gradient(45deg, #e8d3da,#e8e3e8);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+.formContainer img{
+    width: 25%;
+    border-radius: 10px;
+}
+.formContainer form{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.formContainer form input{
+    width: 50%;
+    height: 2.5rem;
+    text-align: center;
+    margin-bottom: 10px;
+    border: 2px solid;
+    border-radius: 8px;
+}
+.formContainer form button{
+    width: 50%;
+    height: 35px;
+    text-align: center;
+    margin-top: 15px;
+    border-radius: 8px;
+    background-color: black;
+    color: white;
+}
+.photoContainer{
+    flex: 1;
+    background-image: url('https://images.unsplash.com/photo-1483979115235-c2609c1b9ad8?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjB8fGNhbXBpbmclMjBmaXJlfGVufDB8fDB8fHww');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+@media (max-width: 426px) {
+    .photoContainer{
+        display: none;
+    }
+    .formContainer form input, .formContainer form button{
+        width: 70%;
+    }
+}
