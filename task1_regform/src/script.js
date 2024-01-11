@@ -42,7 +42,7 @@ document
           console.error("Error during registration:", error);
         });
     } else{
-      alert("passwords do not match");
+      alert("passwords do not match, please refill");
       document.getElementById("registrationForm").reset();
     }
   });
