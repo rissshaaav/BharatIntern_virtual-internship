@@ -35,7 +35,7 @@ document
           return response.json();
         })
         .then((data) => {
-          console.log("Registration successful:", data);
+          alert("registration successfull\n");
           document.getElementById("registrationForm").reset();
         })
         .catch((error) => {
