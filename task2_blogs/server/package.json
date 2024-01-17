@@ -4,6 +4,7 @@
   "description": "this is server for bee_blogs react app",
   "main": "index.js",
   "scripts": {
+    "start": "nodemon index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Rishav",
@@ -11,6 +12,10 @@
   "dependencies": {
     "cors": "^2.8.5",
     "express": "^4.18.2",
-    "mongoose": "^8.0.4"
+    "mongoose": "^8.0.4",
+    "nodemon": "^3.0.2",
+    "path": "^0.12.7",
+    "url": "^0.11.3",
+    "wysiwyg-editor-node-sdk": "^4.1.4"
   }
 }
