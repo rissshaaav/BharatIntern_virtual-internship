@@ -12,6 +12,9 @@ const Main = () => {
   const [keywords, setKeywords] = useState([]);
 
   const handleSubmit = async () => {
+    // if (!banner) {
+    //   return alert("No file selected");
+    // }
     try {
       const storageRef = ref(storage, `images/banner/${banner.name}`);
       const uploadTask = uploadBytesResumable(storageRef, banner);
@@ -39,17 +42,18 @@ const Main = () => {
           }),
         });
 
-        // if (res.ok) {
-        //   setContent(""); //this and
-        //   setKeywords([]); //this was causing infinite rendering
-        // }
+        if (res.ok) {
+          setContent(""); //this and
+          setKeywords([]); //this was causing infinite rendering
+          setBanner(null);
+        }
         console.log(await res.json());
       } catch (error) {
         console.log(error);
       }
     };
 
-    if (bannerURL !== "") {
+    if (bannerURL !== "" && content !== "" && keywords.length>0) {
       fetchData();
     }
   }, [bannerURL, content, keywords]);
