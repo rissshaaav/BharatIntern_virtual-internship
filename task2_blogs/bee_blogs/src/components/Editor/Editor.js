@@ -4,9 +4,9 @@ import "froala-editor/css/froala_style.min.css";
 import "froala-editor/js/plugins.pkgd.min.js";
 import "froala-editor/css/froala_editor.pkgd.min.css";
 
-const Editor = ({ content, setContent }) => {
+const Editor = ({ content, setContent, className }) => {
   return (
-    <div>
+    <div className={className}>
       <FroalaEditorComponent
         model={content}
         onModelChange={(e) => setContent(e)}
@@ -28,6 +28,7 @@ const Editor = ({ content, setContent }) => {
                 "backgroundColor",
                 "clearFormatting",
               ],
+              buttonsVisible: 4,
             },
 
             moreParagraph: {
@@ -45,6 +46,7 @@ const Editor = ({ content, setContent }) => {
                 "indent",
                 "quote",
               ],
+              buttonsVisible: 4,
             },
 
             moreRich: {
@@ -56,6 +58,7 @@ const Editor = ({ content, setContent }) => {
                 "embedly",
                 "insertHR",
               ],
+              buttonsVisible: 5,
             },
 
             moreMisc: {

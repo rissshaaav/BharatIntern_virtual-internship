@@ -1,0 +1,31 @@
+.input{
+    width: 80%;
+    height: 2rem;
+    text-align: center;
+}
+.keyword{
+    background-color: wheat;
+    border: thin solid;
+    border-radius: 10px;
+    margin: 10px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 5rem;
+    min-height: 2rem;
+}
+.cut{
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px 0px 0px 10px;
+    height: 2rem;
+    margin-right: 2px;
+    background-color: rgb(255, 136, 136);
+}
+.keywordText{
+    flex: 3;
+    height: 100%;
+    margin-left: 2px;
+}

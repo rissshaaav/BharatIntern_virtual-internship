@@ -4,6 +4,7 @@ import { ref, getDownloadURL, uploadBytesResumable } from "firebase/storage";
 import Banner from "./Banner";
 import Editor from "./Editor";
 import Metadata from "./Metadata";
+import styles from "./styles.module.css";
 
 const Main = () => {
   const [banner, setBanner] = useState(null);
@@ -18,9 +19,8 @@ const Main = () => {
     try {
       const storageRef = ref(storage, `images/banner/${banner.name}`);
       const uploadTask = uploadBytesResumable(storageRef, banner);
-      uploadTask.on("state_changed", null, null,
-        async () =>{
-        const url =  await getDownloadURL(uploadTask.snapshot.ref);
+      uploadTask.on("state_changed", null, null, async () => {
+        const url = await getDownloadURL(uploadTask.snapshot.ref);
         setBannerURL(url);
       });
     } catch (error) {
@@ -43,8 +43,8 @@ const Main = () => {
         });
 
         if (res.ok) {
-          setContent(""); //this and
-          setKeywords([]); //this was causing infinite rendering
+          setContent("");
+          setKeywords([]);
           setBanner(null);
         }
         console.log(await res.json());
@@ -53,16 +53,30 @@ const Main = () => {
       }
     };
 
-    if (bannerURL !== "" && content !== "" && keywords.length>0) {
+    if (bannerURL !== "" && content !== "" && keywords.length > 0) {
       fetchData();
     }
   }, [bannerURL, content, keywords]);
   return (
-    <div>
-      <Banner setBanner={setBanner} />
-      <Editor content={content} setContent={setContent} />
-      <Metadata keywords={keywords} setKeywords={setKeywords} />
-      <button onClick={handleSubmit}>Submit</button>
+    <div className={styles.wrapper}>
+      <div className={styles.left}>
+        <Banner setBanner={setBanner} className={styles.banner} />
+        <Editor
+          content={content}
+          setContent={setContent}
+          className={styles.editor}
+        />
+      </div>
+      <div className={styles.right}>
+        <Metadata
+          keywords={keywords}
+          setKeywords={setKeywords}
+          className={styles.metadata}
+        />
+        <button onClick={handleSubmit} className={styles.button}>
+          Submit
+        </button>
+      </div>
     </div>
   );
 };

@@ -1,0 +1,32 @@
+.wrapper{
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+.left{
+    flex: 3;
+    margin-right: 5px;
+}
+.right{
+    flex: 1;
+    margin-left: 5px;
+}
+.banner{
+    border: thin dashed #cccccc;
+    border-radius: 10px;
+    height: 15%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin-bottom: 10px;
+    color: #b4b4b6;
+}
+.metadata{
+    border: thin solid #cccccc;
+    border-radius: 10px;
+    padding: 10px;
+    height: 100%;
+    text-align: center;
+}
