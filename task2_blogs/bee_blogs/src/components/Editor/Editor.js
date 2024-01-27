@@ -11,7 +11,7 @@ const Editor = ({ content, setContent, className }) => {
         model={content}
         onModelChange={(e) => setContent(e)}
         config={{
-          heightMin: "87vh",
+          heightMin: "69vh",
           placeholderText: "Start writing your blog here...",
           toolbarButtons: {
             moreText: {
@@ -55,7 +55,6 @@ const Editor = ({ content, setContent, className }) => {
                 "insertTable",
                 "emoticons",
                 "specialCharacters",
-                "embedly",
                 "insertHR",
               ],
               buttonsVisible: 5,
@@ -68,7 +67,6 @@ const Editor = ({ content, setContent, className }) => {
                 "fullscreen",
                 "print",
                 "getPDF",
-                "spellChecker",
                 "selectAll",
                 "html",
                 "help",

@@ -1,9 +1,18 @@
-.input{
+.metadata {
+    border: thin solid #cccccc;
+    border-radius: 10px;
+    padding: 10px;
+    min-height: 90%;
+    text-align: center;
+}
+
+.input {
     width: 80%;
     height: 2rem;
     text-align: center;
 }
-.keyword{
+
+.keyword {
     background-color: wheat;
     border: thin solid;
     border-radius: 10px;
@@ -14,7 +23,8 @@
     min-width: 5rem;
     min-height: 2rem;
 }
-.cut{
+
+.cut {
     flex: 1;
     display: flex;
     align-items: center;
@@ -23,9 +33,12 @@
     height: 2rem;
     margin-right: 2px;
     background-color: rgb(255, 136, 136);
+    cursor: pointer;
 }
-.keywordText{
+
+.keywordText {
     flex: 3;
     height: 100%;
     margin-left: 2px;
+    text-wrap: nowrap;
 }

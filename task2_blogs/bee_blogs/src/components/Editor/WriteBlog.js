@@ -71,7 +71,6 @@ const Main = () => {
         <Metadata
           keywords={keywords}
           setKeywords={setKeywords}
-          className={styles.metadata}
         />
         <button onClick={handleSubmit} className={styles.button}>
           Submit

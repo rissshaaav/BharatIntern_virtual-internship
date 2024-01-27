@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import metadataStyles from "./metadataStyles.module.css";
 
-const Metadata = ({ keywords, setKeywords, className }) => {
+const Metadata = ({ keywords, setKeywords }) => {
   const [word, setWord] = useState("");
   const handleKeyDown = (e) => {
     if (e.key === "Enter" && e.target.value) {
@@ -9,8 +9,13 @@ const Metadata = ({ keywords, setKeywords, className }) => {
       setWord("");
     }
   };
+  const removeKeyword = (index) => {
+    const updatedKeywords = [...keywords];
+    updatedKeywords.splice(index, 1);
+    setKeywords(updatedKeywords);
+  };
   return (
-    <div className={className}>
+    <div className={metadataStyles.metadata}>
       <h2>Metadata</h2>
       <p>This increases the reach of your blog</p>
       <input
@@ -26,7 +31,7 @@ const Metadata = ({ keywords, setKeywords, className }) => {
           keywords.map((keyword, index) => {
             return (
               <div key={index} className={metadataStyles.keyword}>
-                <div className={metadataStyles.cut}><span>✖</span></div>
+                <div className={metadataStyles.cut} onClick={()=>removeKeyword(index)}><span>✖</span></div>
                 <div className={metadataStyles.keywordText}>{keyword}</div>
               </div>
             );

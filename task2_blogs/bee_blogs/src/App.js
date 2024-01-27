@@ -1,10 +1,10 @@
 import './App.css';
-import Main from './components/Editor/Main';
+import WriteBlog from './components/Editor/WriteBlog';
 
 function App() {
   return (
     <div className="App">
-      <Main/>
+      <WriteBlog/>
     </div>
   );
 }
